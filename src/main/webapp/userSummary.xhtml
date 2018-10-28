@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="common/standardTemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="title">
+		<title><h:outputText value="User Summary Page" /></title>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h1>Welcome to user summary page</h1>
+		
+		<h:form id="login">
+
+		<p:panelGrid>
+			<p:commandButton value="Show User Summary"
+				             title="Show User Summary Title" 
+				             action="${loginManager.fetchAllUser()}"
+			/>
+
+		</p:panelGrid>
+		
+		</h:form>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="common/standardTemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="title">
+		<title><h:outputText value="User Summary Page" /></title>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h1>Welcome to user login page</h1>
+		
+		<h:form id="login">
+		
+		   <p:growl sticky="true" showSummary="true" showDetail="false"/>
+
+		<p:panelGrid>
+		   <!-- row 1 -->
+			<p:row>
+			  <p:column>
+			      <p:outputLabel for="userNameId" value="User Name" />                  			  
+			  </p:column>
+			  <p:column>
+			      <p:inputText id="userNameId" value="${loginManager.userName}" />
+			  </p:column>
+			</p:row>
+			
+			<!-- row 2 -->
+			<p:row>
+			  <p:column>
+			      <p:outputLabel for="passwordId" value="Password" />                  			  
+			  </p:column>
+			  <p:column>
+			      <p:password id="passwordId" value="${loginManager.password}" />
+			  </p:column>
+			</p:row>
+		</p:panelGrid>
+		
+		<br/>
+		<p:panelGrid>
+		    <p:commandButton value="Submit"
+				             title="Show login details" 
+				             action="${loginManager.validateUserCredentials()}"
+			/>		
+		</p:panelGrid>
+		
+		</h:form>
+
+	</ui:define>
+</ui:composition>
